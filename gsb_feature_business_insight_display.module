@@ -10,7 +10,7 @@ function gsb_feature_business_insight_display_entity_info_alter(&$entity_info) {
   
   $entity_info['node']['view modes']['tiny'] = array(
     'label' => t('Tiny display'),
-    'custom settings' => TRUE,
+    'custom settings' => TRUE,
   );
 
   $entity_info['field_collection_item']['view modes']['tiny'] = array(
