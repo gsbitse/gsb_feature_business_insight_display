@@ -8,7 +8,6 @@
  * Implements hook_views_default_views().
  */
 function gsb_feature_business_insight_display_views_default_views() {
-  
   $export = array();
 
   $view = new view();
@@ -229,6 +228,13 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['sorts']['field_date_published_value']['id'] = 'field_date_published_value';
   $handler->display->display_options['sorts']['field_date_published_value']['table'] = 'field_data_field_date_published';
   $handler->display->display_options['sorts']['field_date_published_value']['field'] = 'field_date_published_value';
+  $handler->display->display_options['sorts']['field_date_published_value']['order'] = 'DESC';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  $handler->display->display_options['sorts']['random']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['random']['expose']['label'] = 'Random';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -405,6 +411,12 @@ function gsb_feature_business_insight_display_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_tag_tid']['vocabulary'] = 'tag';
+  /* Filter criterion: Content: Date Published (field_date_published) */
+  $handler->display->display_options['filters']['field_date_published_value']['id'] = 'field_date_published_value';
+  $handler->display->display_options['filters']['field_date_published_value']['table'] = 'field_data_field_date_published';
+  $handler->display->display_options['filters']['field_date_published_value']['field'] = 'field_date_published_value';
+  $handler->display->display_options['filters']['field_date_published_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_date_published_value']['default_date'] = 'now';
 
   /* Display: Business Insights */
   $handler = $view->new_display('panel_pane', 'Business Insights', 'business_insights');
@@ -453,6 +465,12 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Editorial Summary */
+  $handler->display->display_options['fields']['field_editorial_blurb']['id'] = 'field_editorial_blurb';
+  $handler->display->display_options['fields']['field_editorial_blurb']['table'] = 'field_data_field_editorial_blurb';
+  $handler->display->display_options['fields']['field_editorial_blurb']['field'] = 'field_editorial_blurb';
+  $handler->display->display_options['fields']['field_editorial_blurb']['label'] = '';
+  $handler->display->display_options['fields']['field_editorial_blurb']['element_label_colon'] = FALSE;
   /* Field: Content: Authors */
   $handler->display->display_options['fields']['field_authors']['id'] = 'field_authors';
   $handler->display->display_options['fields']['field_authors']['table'] = 'field_data_field_authors';
@@ -483,20 +501,6 @@ function gsb_feature_business_insight_display_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-  );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '[field_date_published]<span class="news-sep"> | </span>[body-value]';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '225';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '150',
   );
   /* Field: Content: All taxonomy terms */
   $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
@@ -541,8 +545,6 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
-
-
   $export['gsb_business_insight'] = $view;
 
   return $export;
