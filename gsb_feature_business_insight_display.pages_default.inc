@@ -189,7 +189,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'business_insides';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'No Category Selected',
     'no_blocks' => 0,
@@ -201,34 +201,93 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'string_equal',
-          'settings' => array(
-            'operator' => '=',
-            'value' => '',
-            'case' => 0,
-          ),
-          'context' => 'argument_string_1',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
   );
   $display = new panels_display();
-  $display->layout = 'gsb-standard-page-three';
+  $display->layout = 'gsb-business-insights';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
     ),
   );
   $display->cache = array();
   $display->title = 'Business Insides';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1';
+    $pane->panel = 'contenttwoone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insides_sidebar-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-1'] = $pane;
+    $display->panels['contenttwoone'][0] = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-2';
+    $pane->panel = 'contenttwotwo';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(),
+    );
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '%name:html_safe',
+      'body' => '<p>%name:html_safe</p>',
+      'format' => 'panopoly_wysiwyg_text',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['contenttwotwo'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -240,7 +299,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'business_insides';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'Entrepreneurship',
     'no_blocks' => 0,
@@ -268,7 +327,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'gsb-standard-page-three';
+  $display->layout = 'gsb-business-insights';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -281,8 +340,40 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
-    $pane->panel = 'contentmain';
+    $pane->pid = 'new-3';
+    $pane->panel = 'contenttwoone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insides_sidebar-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['contenttwoone'][0] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
+    $pane->panel = 'contenttwotwo';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -302,8 +393,8 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1';
+    $display->content['new-4'] = $pane;
+    $display->panels['contenttwotwo'][0] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
