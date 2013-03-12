@@ -54,7 +54,7 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'gsb-standard-page-one';
+  $display->layout = 'gsb-business-insights';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -66,6 +66,16 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
       'contentmiddlecolumn2' => NULL,
       'contentlowerfooter' => NULL,
       'contentmiddlesidebar' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
     ),
   );
   $display->cache = array();
@@ -74,7 +84,7 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'contentuppermain1';
+    $pane->panel = 'contentoneone';
     $pane->type = 'node_content';
     $pane->subtype = 'node_content';
     $pane->shown = TRUE;
@@ -82,11 +92,11 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
     $pane->configuration = array(
       'links' => 0,
       'no_extras' => 1,
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'identifier' => '',
       'link' => 0,
-      'leave_node_title' => 0,
+      'leave_node_title' => 1,
       'build_mode' => 'full',
       'context' => array(),
     );
@@ -99,10 +109,10 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
-    $display->panels['contentuppermain1'][0] = 'new-1';
+    $display->panels['contentoneone'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'contentuppermain1';
+    $pane->panel = 'contentthreeone';
     $pane->type = 'views';
     $pane->subtype = 'gsb_business_insight';
     $pane->shown = TRUE;
@@ -123,8 +133,8 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
       'context' => array(
         0 => 'relationship_entity_from_field:field_business_insight_topic-node-taxonomy_term_1.tid',
       ),
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Explore more',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -132,12 +142,12 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
-    $display->panels['contentuppermain1'][1] = 'new-2';
+    $display->panels['contentthreeone'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;
 
