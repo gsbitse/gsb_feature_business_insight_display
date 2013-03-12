@@ -83,11 +83,11 @@ function gsb_feature_business_insight_display_flag_default_flags() {
     'show_on_teaser' => 0,
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'gsb_feature_business_insight_display',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 

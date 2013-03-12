@@ -79,7 +79,7 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:body';
+  $display->title = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -146,7 +146,7 @@ function gsb_feature_business_insight_display_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['contentthreeone'][0] = 'new-2';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;
