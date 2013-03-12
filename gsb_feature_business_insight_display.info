@@ -20,5 +20,6 @@ features[features_override_items][] = page_manager_handlers.node_view_panelizer
 features[features_overrides][] = page_manager_handlers.node_view_panelizer.conf|access|logic
 features[features_overrides][] = page_manager_handlers.node_view_panelizer.conf|access|plugins
 features[page_manager_handlers][] = node_view_panel_context
+features[page_manager_pages][] = business_insides
 features[variable][] = panelizer_defaults_node_business_insight
 features[views_view][] = gsb_business_insight
