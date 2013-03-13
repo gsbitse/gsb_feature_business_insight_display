@@ -654,12 +654,6 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Editorial Summary */
-  $handler->display->display_options['fields']['field_editorial_blurb']['id'] = 'field_editorial_blurb';
-  $handler->display->display_options['fields']['field_editorial_blurb']['table'] = 'field_data_field_editorial_blurb';
-  $handler->display->display_options['fields']['field_editorial_blurb']['field'] = 'field_editorial_blurb';
-  $handler->display->display_options['fields']['field_editorial_blurb']['label'] = '';
-  $handler->display->display_options['fields']['field_editorial_blurb']['element_label_colon'] = FALSE;
   /* Field: Content: Authors */
   $handler->display->display_options['fields']['field_authors']['id'] = 'field_authors';
   $handler->display->display_options['fields']['field_authors']['table'] = 'field_data_field_authors';

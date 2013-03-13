@@ -58,7 +58,8 @@ function gsb_feature_business_insight_display_flag_default_flags() {
     'global' => '0',
     'types' => array(
       0 => 'gsb_event',
-      1 => 'gsb_video',
+      1 => 'gsb_school_story',
+      2 => 'gsb_video',
     ),
     'flag_short' => 'Flag Business Insight',
     'flag_long' => '',
