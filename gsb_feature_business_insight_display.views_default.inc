@@ -11,7 +11,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'business_insides_by_tag';
+  $view->name = 'business_insights_by_tag';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -136,14 +136,14 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'gsb_event' => 'gsb_event',
   );
-  $export['business_insides_by_tag'] = $view;
+  $export['business_insights_by_tag'] = $view;
 
   $view = new view();
-  $view->name = 'business_insides_sidebar';
+  $view->name = 'business_insights_sidebar';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'Business Insides sidebar';
+  $view->human_name = 'Business insights sidebar';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -202,7 +202,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   /* Display: Business Insights Menu */
   $handler = $view->new_display('panel_pane', 'Business Insights Menu', 'business_insights_menu');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $export['business_insides_sidebar'] = $view;
+  $export['business_insights_sidebar'] = $view;
 
   $view = new view();
   $view->name = 'gsb_business_insight';
