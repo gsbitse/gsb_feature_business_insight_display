@@ -27,7 +27,11 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* Field: Content: Title */
@@ -42,6 +46,40 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Business Insight Topic (field_business_insight_topic) */
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['validate_options']['vocabularies'] = array(
+    'business_insight_topic' => 'business_insight_topic',
+  );
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['validate_options']['type'] = 'convert';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'gsb_video' => 'gsb_video',
+  );
+
+  /* Display: Main */
+  $handler = $view->new_display('panel_pane', 'Main', 'business_insides_by_tag');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -60,6 +98,20 @@ function gsb_feature_business_insight_display_views_default_views() {
     'gsb_school_story' => 'gsb_school_story',
     'gsb_video' => 'gsb_video',
   );
+  $handler->display->display_options['argument_input'] = array(
+    'field_business_insight_topic_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:file.field_file_image_alt_text',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Business Insight Topic (field_business_insight_topic)',
+    ),
+  );
+
+  /* Display: Video */
+  $handler = $view->new_display('panel_pane', 'Video', 'business_insides_video');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $export['business_insides_by_tag'] = $view;
 
   $view = new view();
@@ -79,7 +131,8 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Taxonomy term: Name */
