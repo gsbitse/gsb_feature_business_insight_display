@@ -15,7 +15,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Business Insides by tag';
+  $view->human_name = 'Business Insights by tag';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -32,6 +32,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show more';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* Field: Content: Title */
@@ -56,9 +57,6 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['validate_options']['vocabularies'] = array(
-    'business_insight_topic' => 'business_insight_topic',
-  );
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['validate_options']['type'] = 'convert';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -76,7 +74,9 @@ function gsb_feature_business_insight_display_views_default_views() {
   );
 
   /* Display: Main */
-  $handler = $view->new_display('panel_pane', 'Main', 'business_insides_by_tag');
+  $handler = $view->new_display('panel_pane', 'Main', 'business_insights_by_tag');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'business-insights-list';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -110,8 +110,32 @@ function gsb_feature_business_insight_display_views_default_views() {
   );
 
   /* Display: Video */
-  $handler = $view->new_display('panel_pane', 'Video', 'business_insides_video');
+  $handler = $view->new_display('panel_pane', 'Video', 'business_insight_video');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'business-insights-list';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+
+  /* Display: Events */
+  $handler = $view->new_display('panel_pane', 'Events', 'business_insight_events');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'business-insights-list';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'gsb_event' => 'gsb_event',
+  );
   $export['business_insides_by_tag'] = $view;
 
   $view = new view();
@@ -134,6 +158,13 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'vid',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -141,9 +172,16 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'business-insides/[name]';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'business-insights/[name]';
   $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy vocabulary: Vocabulary ID */
+  $handler->display->display_options['fields']['vid']['id'] = 'vid';
+  $handler->display->display_options['fields']['vid']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['fields']['vid']['field'] = 'vid';
+  $handler->display->display_options['fields']['vid']['label'] = '';
+  $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
   /* Sort criterion: Taxonomy vocabulary: Vocabulary ID */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'taxonomy_vocabulary';
@@ -161,8 +199,8 @@ function gsb_feature_business_insight_display_views_default_views() {
     'region' => 'region',
   );
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Business Insights Menu */
+  $handler = $view->new_display('panel_pane', 'Business Insights Menu', 'business_insights_menu');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $export['business_insides_sidebar'] = $view;
 
