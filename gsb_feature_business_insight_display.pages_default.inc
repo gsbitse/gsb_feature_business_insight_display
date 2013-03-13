@@ -161,7 +161,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'business_insightss';
+  $page->name = 'business_insights';
   $page->task = 'page';
   $page->admin_title = 'Business insights';
   $page->admin_description = 'Display different variants for business insights';
@@ -203,9 +203,9 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insightss_panel_context_2';
+  $handler->name = 'page_business_insights_panel_context_2';
   $handler->task = 'page';
-  $handler->subtask = 'business_insightss';
+  $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
   $handler->weight = -28;
   $handler->conf = array(
@@ -259,7 +259,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-1';
     $pane->panel = 'contentfiveone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_by_tag-business_insights_by_tag';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -317,7 +317,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-3';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_sidebar-business_insights_menu';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -354,9 +354,9 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insightss_panel_context';
+  $handler->name = 'page_business_insights_panel_context';
   $handler->task = 'page';
-  $handler->subtask = 'business_insightss';
+  $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
@@ -426,7 +426,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-4';
     $pane->panel = 'contentfiveone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_by_tag-business_insights_by_tag';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -460,7 +460,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-5';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_sidebar-business_insights_menu';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -497,9 +497,9 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insightss_panel_context_3';
+  $handler->name = 'page_business_insights_panel_context_3';
   $handler->task = 'page';
-  $handler->subtask = 'business_insightss';
+  $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
@@ -554,7 +554,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-6';
     $pane->panel = 'contentfiveone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_by_tag-business_insight_video';
+    $pane->subtype = 'business_insights_by_tag-business_insight_video';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -612,7 +612,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-8';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_sidebar-business_insights_menu';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -649,9 +649,9 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insightss_panel_context_4';
+  $handler->name = 'page_business_insights_panel_context_4';
   $handler->task = 'page';
-  $handler->subtask = 'business_insightss';
+  $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
   $handler->weight = -27;
   $handler->conf = array(
@@ -705,7 +705,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-9';
     $pane->panel = 'contentfiveone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_by_tag-business_insights_by_tag';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -765,7 +765,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->pid = 'new-11';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insightss_sidebar-business_insights_menu';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -799,7 +799,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['business_insightss'] = $page;
+  $pages['business_insights'] = $page;
 
   return $pages;
 
