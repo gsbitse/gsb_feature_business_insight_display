@@ -198,6 +198,10 @@ function gsb_feature_business_insight_display_views_default_views() {
     'business_insight_topic' => 'business_insight_topic',
     'region' => 'region',
   );
+  /* Filter criterion: Taxonomy term: Parent term */
+  $handler->display->display_options['filters']['parent']['id'] = 'parent';
+  $handler->display->display_options['filters']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['filters']['parent']['field'] = 'parent';
 
   /* Display: Business Insights Menu */
   $handler = $view->new_display('panel_pane', 'Business Insights Menu', 'business_insights_menu');
@@ -357,7 +361,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Editorial Summary */
+  /* Field: Field: Editorial Summary */
   $handler->display->display_options['fields']['field_editorial_summary']['id'] = 'field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['table'] = 'field_data_field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['field'] = 'field_editorial_summary';
@@ -384,7 +388,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['label'] = '';
   $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
-  /* Field: Content: Content Image */
+  /* Field: Field: Content Image */
   $handler->display->display_options['fields']['field_content_image']['id'] = 'field_content_image';
   $handler->display->display_options['fields']['field_content_image']['table'] = 'field_data_field_content_image';
   $handler->display->display_options['fields']['field_content_image']['field'] = 'field_content_image';
@@ -634,7 +638,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<span class="blue-small-border"></span>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  /* Field: Content: Content Image */
+  /* Field: Field: Content Image */
   $handler->display->display_options['fields']['field_content_image']['id'] = 'field_content_image';
   $handler->display->display_options['fields']['field_content_image']['table'] = 'field_data_field_content_image';
   $handler->display->display_options['fields']['field_content_image']['field'] = 'field_content_image';
@@ -805,7 +809,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['field_date_published_value']['operator'] = '<=';
   $handler->display->display_options['filters']['field_date_published_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_published_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Content Image (field_content_image:fid) */
+  /* Filter criterion: Field: Content Image (field_content_image:fid) */
   $handler->display->display_options['filters']['field_content_image_fid']['id'] = 'field_content_image_fid';
   $handler->display->display_options['filters']['field_content_image_fid']['table'] = 'field_data_field_content_image';
   $handler->display->display_options['filters']['field_content_image_fid']['field'] = 'field_content_image_fid';
