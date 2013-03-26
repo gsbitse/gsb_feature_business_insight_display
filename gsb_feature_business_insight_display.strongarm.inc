@@ -18,13 +18,18 @@ function gsb_feature_business_insight_display_strongarm() {
     'status' => 1,
     'view modes' => array(
       'page_manager' => array(
-        'status' => 1,
+        'status' => 0,
         'default' => 1,
         'choice' => 1,
       ),
       'default' => array(
         'status' => 0,
         'default' => 0,
+        'choice' => 0,
+      ),
+      'full' => array(
+        'status' => 1,
+        'default' => 1,
         'choice' => 0,
       ),
       'teaser' => array(

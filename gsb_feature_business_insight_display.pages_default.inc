@@ -166,7 +166,10 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $page->admin_title = 'Business insights';
   $page->admin_description = 'Display different variants for business insights';
   $page->path = 'business-insights/!name';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'name' => array(
