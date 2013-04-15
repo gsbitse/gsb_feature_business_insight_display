@@ -737,6 +737,40 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $display->panels['contentfiveone'][0] = 'new-9';
     $pane = new stdClass();
     $pane->pid = 'new-10';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-other';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-10'] = $pane;
+    $display->panels['contentfiveone'][1] = 'new-10';
+    $pane = new stdClass();
+    $pane->pid = 'new-11';
     $pane->panel = 'contentoneone';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -759,10 +793,10 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-10'] = $pane;
-    $display->panels['contentoneone'][0] = 'new-10';
+    $display->content['new-11'] = $pane;
+    $display->panels['contentoneone'][0] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-12';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
     $pane->subtype = 'business_insights_sidebar-business_insights_menu';
@@ -793,8 +827,8 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-11'] = $pane;
-    $display->panels['contentrightone'][0] = 'new-11';
+    $display->content['new-12'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-12';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

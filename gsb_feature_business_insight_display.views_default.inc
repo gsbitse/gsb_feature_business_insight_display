@@ -35,6 +35,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['pager']['options']['more_button_text'] = 'Show more';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'business_insight';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -51,6 +52,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
+  $handler->display->display_options['arguments']['field_business_insight_topic_tid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_business_insight_topic_tid']['summary']['format'] = 'default_summary';
@@ -93,9 +95,9 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'business_insight' => 'business_insight',
-    'gsb_event' => 'gsb_event',
-    'gsb_media_mention' => 'gsb_media_mention',
-    'gsb_school_story' => 'gsb_school_story',
+    'event' => 'event',
+    'media_mention' => 'media_mention',
+    'school_story' => 'school_story',
     'gsb_video' => 'gsb_video',
   );
   $handler->display->display_options['argument_input'] = array(
@@ -134,7 +136,39 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'gsb_event' => 'gsb_event',
+    'event' => 'event',
+  );
+
+  /* Display: Other */
+  $handler = $view->new_display('panel_pane', 'Other', 'other');
+  $handler->display->display_options['display_description'] = 'Non Business Insights';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_insight' => 'business_insight',
+    'gsb_video' => 'gsb_video',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'field_business_insight_topic_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:field_collection_item.field_cta_action',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Business Insight Topic (field_business_insight_topic)',
+    ),
   );
   $export['business_insights_by_tag'] = $view;
 
@@ -394,17 +428,12 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['field_content_image']['field'] = 'field_content_image';
   $handler->display->display_options['fields']['field_content_image']['label'] = '';
   $handler->display->display_options['fields']['field_content_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_content_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_content_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  /* Field: Content: Content Image Caption */
-  $handler->display->display_options['fields']['field_content_image_caption']['id'] = 'field_content_image_caption';
-  $handler->display->display_options['fields']['field_content_image_caption']['table'] = 'field_data_field_content_image_caption';
-  $handler->display->display_options['fields']['field_content_image_caption']['field'] = 'field_content_image_caption';
-  $handler->display->display_options['fields']['field_content_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_content_image_caption']['element_label_colon'] = FALSE;
+  /* Field: Content: Header Image Caption */
+  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
+  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_date_published']['id'] = 'field_date_published';
   $handler->display->display_options['fields']['field_date_published']['table'] = 'field_data_field_date_published';
@@ -670,11 +699,6 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['field_authors']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_authors']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_authors']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_authors']['type'] = 'field_collection_fields';
-  $handler->display->display_options['fields']['field_authors']['settings'] = array(
-    'view_mode' => 'tiny',
-  );
-  $handler->display->display_options['fields']['field_authors']['delta_offset'] = '0';
   /* Field: Content: Date Published */
   $handler->display->display_options['fields']['field_date_published']['id'] = 'field_date_published';
   $handler->display->display_options['fields']['field_date_published']['table'] = 'field_data_field_date_published';
