@@ -203,13 +203,13 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insights_panel_context_2';
+  $handler->name = 'page_business_insights_panel_context_5';
   $handler->task = 'page';
   $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Front Page',
+    'title' => 'Business & Society',
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
@@ -219,17 +219,35 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'context_exists',
+          'name' => 'term',
           'settings' => array(
-            'exists' => '0',
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10000 => '10000',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
           ),
           'context' => 'argument_term_1',
           'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
   );
   $display = new panels_display();
@@ -252,7 +270,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Business insights %name:name';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -291,30 +309,6 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $display->panels['contentfiveone'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'contentoneone';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Business insights',
-      'body' => '',
-      'format' => 'panopoly_wysiwyg_text',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['contentoneone'][0] = 'new-2';
-    $pane = new stdClass();
-    $pane->pid = 'new-3';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
     $pane->subtype = 'business_insights_sidebar-business_insights_menu';
@@ -345,8 +339,8 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['contentrightone'][0] = 'new-3';
+    $display->content['new-2'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -354,13 +348,13 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insights_panel_context';
+  $handler->name = 'page_business_insights_panel_context_6';
   $handler->task = 'page';
   $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Entrepreneurship',
+    'title' => 'Consumer',
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
@@ -375,23 +369,25 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
         0 => array(
           'name' => 'term',
           'settings' => array(
-            'vid' => '3',
-            2 => array(),
-            3 => array(
-              2 => '2',
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10001 => '10001',
             ),
             1 => array(),
-            4 => array(),
-            5 => array(),
-            6 => array(),
-            7 => array(),
-            8 => array(),
-            9 => array(),
-            10 => array(),
-            11 => array(),
-            12 => array(),
-            13 => array(),
-            14 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
           ),
           'context' => 'argument_term_1',
           'not' => FALSE,
@@ -423,7 +419,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-4';
+    $pane->pid = 'new-3';
     $pane->panel = 'contentfiveone';
     $pane->type = 'views_panes';
     $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
@@ -454,10 +450,10 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['contentfiveone'][0] = 'new-4';
+    $display->content['new-3'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-5';
+    $pane->pid = 'new-4';
     $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
     $pane->subtype = 'business_insights_sidebar-business_insights_menu';
@@ -488,8 +484,8 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['contentrightone'][0] = 'new-5';
+    $display->content['new-4'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -497,13 +493,13 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insights_panel_context_3';
+  $handler->name = 'page_business_insights_panel_context_7';
   $handler->task = 'page';
   $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -28;
   $handler->conf = array(
-    'title' => 'Video',
+    'title' => 'Education',
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
@@ -515,13 +511,30 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
+        0 => array(
+          'name' => 'term',
           'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'business-insights/Video',
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10002 => '10002',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
           ),
-          'context' => 'empty',
+          'context' => 'argument_term_1',
           'not' => FALSE,
         ),
       ),
@@ -547,14 +560,48 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Business insights Video';
+  $display->title = 'Business insights %name:name';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-5';
     $pane->panel = 'contentfiveone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insights_by_tag-business_insight_video';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -583,20 +630,107 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-6'] = $pane;
-    $display->panels['contentfiveone'][0] = 'new-6';
+    $display->panels['contentrightone'][0] = 'new-6';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_8';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -27;
+  $handler->conf = array(
+    'title' => 'Energy',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10003 => '10003',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-7';
-    $pane->panel = 'contentoneone';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Video',
-      'body' => '',
-      'format' => 'panopoly_wysiwyg_text',
-      'substitute' => 1,
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -607,7 +741,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-7'] = $pane;
-    $display->panels['contentoneone'][0] = 'new-7';
+    $display->panels['contentfiveone'][0] = 'new-7';
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'contentrightone';
@@ -649,13 +783,13 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_business_insights_panel_context_4';
+  $handler->name = 'page_business_insights_panel_context';
   $handler->task = 'page';
   $handler->subtask = 'business_insights';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'Term page',
+    'title' => 'Entrepreneurship',
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
@@ -665,17 +799,35 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'context_exists',
+          'name' => 'term',
           'settings' => array(
-            'exists' => '1',
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10004 => '10004',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
           ),
           'context' => 'argument_term_1',
           'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
   );
   $display = new panels_display();
@@ -737,9 +889,9 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $display->panels['contentfiveone'][0] = 'new-9';
     $pane = new stdClass();
     $pane->pid = 'new-10';
-    $pane->panel = 'contentfiveone';
+    $pane->panel = 'contentrightone';
     $pane->type = 'views_panes';
-    $pane->subtype = 'business_insights_by_tag-other';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -765,25 +917,110 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $display->content['new-10'] = $pane;
-    $display->panels['contentfiveone'][1] = 'new-10';
+    $display->panels['contentrightone'][0] = 'new-10';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_9';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -25;
+  $handler->conf = array(
+    'title' => 'Finance & Economics',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10005 => '10005',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-11';
-    $pane->panel = 'contentoneone';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
     $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(),
-    );
+    $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '%name:html_safe',
-      'body' => '<p>%name:html_safe</p>',
-      'format' => 'panopoly_wysiwyg_text',
-      'substitute' => 1,
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -794,7 +1031,7 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-11'] = $pane;
-    $display->panels['contentoneone'][0] = 'new-11';
+    $display->panels['contentfiveone'][0] = 'new-11';
     $pane = new stdClass();
     $pane->pid = 'new-12';
     $pane->panel = 'contentrightone';
@@ -829,6 +1066,2111 @@ function gsb_feature_business_insight_display_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-12'] = $pane;
     $display->panels['contentrightone'][0] = 'new-12';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_10';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -24;
+  $handler->conf = array(
+    'title' => 'Global Business',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10006 => '10006',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-13';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-13'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-13';
+    $pane = new stdClass();
+    $pane->pid = 'new-14';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-14'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-14';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_11';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -23;
+  $handler->conf = array(
+    'title' => 'Health Care',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10007 => '10007',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-15';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-15'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-15';
+    $pane = new stdClass();
+    $pane->pid = 'new-16';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-16'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-16';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_12';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -22;
+  $handler->conf = array(
+    'title' => 'Leadership',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10008 => '10008',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-17';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-17'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-17';
+    $pane = new stdClass();
+    $pane->pid = 'new-18';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-18'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-18';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_13';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -21;
+  $handler->conf = array(
+    'title' => 'Management & Organizations',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10009 => '10009',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-19';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-19'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-19';
+    $pane = new stdClass();
+    $pane->pid = 'new-20';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-20'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-20';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_14';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -20;
+  $handler->conf = array(
+    'title' => 'Marketing',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10010 => '10010',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-21';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-21'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-21';
+    $pane = new stdClass();
+    $pane->pid = 'new-22';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-22'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-22';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_15';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -19;
+  $handler->conf = array(
+    'title' => 'Media & Entertainment',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10011 => '10011',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-23';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-23'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-23';
+    $pane = new stdClass();
+    $pane->pid = 'new-24';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-24'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-24';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_16';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -18;
+  $handler->conf = array(
+    'title' => 'Nonprofit',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10012 => '10012',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-25';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-25'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-25';
+    $pane = new stdClass();
+    $pane->pid = 'new-26';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-26'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-26';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_17';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -17;
+  $handler->conf = array(
+    'title' => 'Operations',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10013 => '10013',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-27';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-27'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-27';
+    $pane = new stdClass();
+    $pane->pid = 'new-28';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-28'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-28';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_18';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -16;
+  $handler->conf = array(
+    'title' => 'Public Sector',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10014 => '10014',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-29';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-29'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-29';
+    $pane = new stdClass();
+    $pane->pid = 'new-30';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-30'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-30';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_19';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -15;
+  $handler->conf = array(
+    'title' => 'Technology',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10015 => '10015',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-31';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-31'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-31';
+    $pane = new stdClass();
+    $pane->pid = 'new-32';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-32'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-32';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_20';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -14;
+  $handler->conf = array(
+    'title' => 'Transportation',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'term',
+          'settings' => array(
+            'vid' => '101',
+            100 => array(),
+            101 => array(
+              10016 => '10016',
+            ),
+            1 => array(),
+            102 => array(),
+            103 => array(),
+            104 => array(),
+            105 => array(),
+            106 => array(),
+            107 => array(),
+            108 => array(),
+            109 => array(),
+            110 => array(),
+            111 => array(),
+            112 => array(),
+            113 => array(),
+            114 => array(),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-33';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-33'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-33';
+    $pane = new stdClass();
+    $pane->pid = 'new-34';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-34'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-34';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_21';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -13;
+  $handler->conf = array(
+    'title' => 'Event',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'business-insights/event',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights Event';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-35';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insight_events';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-35'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-35';
+    $pane = new stdClass();
+    $pane->pid = 'new-36';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-36'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-36';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_3';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -12;
+  $handler->conf = array(
+    'title' => 'Video',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'business-insights/video',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights Video';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-37';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insight_video';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-37'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-37';
+    $pane = new stdClass();
+    $pane->pid = 'new-38';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-38'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-38';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -11;
+  $handler->conf = array(
+    'title' => 'Front Page',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'context_exists',
+          'settings' => array(
+            'exists' => '0',
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-39';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-39'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-39';
+    $pane = new stdClass();
+    $pane->pid = 'new-40';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-40'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-40';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_business_insights_panel_context_4';
+  $handler->task = 'page';
+  $handler->subtask = 'business_insights';
+  $handler->handler = 'panel_context';
+  $handler->weight = -10;
+  $handler->conf = array(
+    'title' => 'Term page',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'context_exists',
+          'settings' => array(
+            'exists' => '1',
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'gsb-business-insights';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'contentrightone' => NULL,
+      'contentoneone' => NULL,
+      'contenttwoone' => NULL,
+      'contenttwotwo' => NULL,
+      'contenttwothree' => NULL,
+      'contentthreeone' => NULL,
+      'contentfourone' => NULL,
+      'contentfourtwo' => NULL,
+      'contentfourthree' => NULL,
+      'contentfiveone' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Business insights %name:name';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-41';
+    $pane->panel = 'contentfiveone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_by_tag-business_insights_by_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-41'] = $pane;
+    $display->panels['contentfiveone'][0] = 'new-41';
+    $pane = new stdClass();
+    $pane->pid = 'new-42';
+    $pane->panel = 'contentrightone';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'business_insights_sidebar-business_insights_menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'teaser',
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-42'] = $pane;
+    $display->panels['contentrightone'][0] = 'new-42';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
