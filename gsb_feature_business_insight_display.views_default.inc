@@ -22,6 +22,7 @@ function gsb_feature_business_insight_display_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'view-list-teaser';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -82,7 +83,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   /* Display: Main */
   $handler = $view->new_display('panel_pane', 'Main', 'business_insights_by_tag');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'business-insights-list';
+  $handler->display->display_options['css_class'] = 'view-list-teaser';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -118,13 +119,13 @@ function gsb_feature_business_insight_display_views_default_views() {
   /* Display: Video */
   $handler = $view->new_display('panel_pane', 'Video', 'business_insight_video');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'business-insights-list';
+  $handler->display->display_options['css_class'] = 'view-list-teaser';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
 
   /* Display: Events */
   $handler = $view->new_display('panel_pane', 'Events', 'business_insight_events');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'business-insights-list';
+  $handler->display->display_options['css_class'] = 'view-list-teaser';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -196,14 +197,29 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'vid',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<ul class="bi_ct_filter">
+<li class="bi_ct_video"><a href="/business-insights/Video">Video</a></li>
+<li class="bi_ct_event"><a href="/business-insights/Event">Event</a></li>
+</ul>';
+  $handler->display->display_options['header']['area']['format'] = 'panopoly_wysiwyg_text';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="bi-map"><span class="bi-map__overlay"></span><img src="/profiles/gsb_public/themes/gsb_theme/images/businessinsights_region_map.png" width="235" height="150" border="0" usemap="#bi-map" class="bi-map__image"/><map name="bi-map" class="bi-map-area"><area alt="Americas" shape="poly" coords="45,74,42,82,19,70,8,40,0,37,1,18,73,8,107,11,101,28,73,37,72,52,52,60,64,73,62,73" href="/business-insights/Americas" /><area alt="Americas" shape="poly" coords="69,143,58,143,46,131,45,107,35,91,42,82,45,74,64,73,68,81,86,91,81,115,68,132" href="/business-insights/Americas" /><area alt="Africa" shape="poly" coords="127,122,114,123,108,99,106,85,93,83,88,73,89,54,101,52,110,48,118,54,129,55,133,66,147,76,152,90,147,113,137,121" href="/business-insights/Africa" /><area alt="Europe" shape="poly" coords="110,10,109,23,101,31,96,42,98,51,103,51,111,47,119,53,124,54,124,48,129,43,131,21,125,12" href="/business-insights/Europe" /><area alt="Asia" shape="poly" coords="131,20,140,12,183,13,224,23,214,44,209,64,193,68,189,78,177,79,166,84,152,75,147,75,133,66,129,53,124,54,125,46,129,44,130,29" href="/business-insights/Asia" /><area alt="Oceania" shape="poly" coords="221,139,202,128,201,121,186,121,190,103,197,98,184,94,176,79,189,78,194,67,210,64,212,81,234,92,234,130" href="/business-insights/Oceania" /></map><span class="bi-map__text"></span></div>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Field: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['label'] = '';
+  $handler->display->display_options['fields']['machine_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -213,13 +229,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['path'] = 'business-insights/[name]';
   $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy vocabulary: Vocabulary ID */
-  $handler->display->display_options['fields']['vid']['id'] = 'vid';
-  $handler->display->display_options['fields']['vid']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['fields']['vid']['field'] = 'vid';
-  $handler->display->display_options['fields']['vid']['label'] = '';
-  $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'menu_[machine_name]';
   /* Sort criterion: Taxonomy vocabulary: Vocabulary ID */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'taxonomy_vocabulary';
