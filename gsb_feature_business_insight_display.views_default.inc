@@ -37,7 +37,6 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['pager']['options']['more_button_text'] = 'Show more';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'business_insight';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
