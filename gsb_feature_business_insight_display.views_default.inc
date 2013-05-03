@@ -294,6 +294,59 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'business_insight' => 'business_insight',
   );
+
+  /* Display: Region */
+  $handler = $view->new_display('panel_pane', 'Region', 'business_insights_by_region');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'view-list-teaser';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Region (field_region) */
+  $handler->display->display_options['arguments']['field_region_tid']['id'] = 'field_region_tid';
+  $handler->display->display_options['arguments']['field_region_tid']['table'] = 'field_data_field_region';
+  $handler->display->display_options['arguments']['field_region_tid']['field'] = 'field_region_tid';
+  $handler->display->display_options['arguments']['field_region_tid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_region_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_region_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_region_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_region_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_region_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_region_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_region_tid']['validate_options']['vocabularies'] = array(
+    'region' => 'region',
+  );
+  $handler->display->display_options['arguments']['field_region_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_region_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_insight' => 'business_insight',
+    'event' => 'event',
+    'media_mention' => 'media_mention',
+    'school_story' => 'school_story',
+    'gsb_video' => 'gsb_video',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'field_region_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:field_collection_item.field-cta-action',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Region (field_region)',
+    ),
+  );
   $export['business_insights_by_tag'] = $view;
 
   $view = new view();
