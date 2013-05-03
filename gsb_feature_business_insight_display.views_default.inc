@@ -50,6 +50,9 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'business_insight_topic' => 'business_insight_topic',
   );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'bi_topic_filter_content_pane');
   $export['business_insight_topic_filter'] = $view;
 
   $view = new view();
