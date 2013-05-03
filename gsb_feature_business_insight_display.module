@@ -19,3 +19,38 @@ function gsb_feature_business_insight_display_entity_info_alter(&$entity_info) {
   );
 
 }
+
+/**
+ * Implements hook_fieldable_panels_pane_view().
+ */
+function gsb_feature_business_insight_display_fieldable_panels_pane_view($entity, $view_mode, $langcode) {
+  $hide = FALSE;
+  // Check if this is a BI node.
+  if ($node = menu_get_object()) {
+    $hide = $node->type == 'business_insight';
+  }
+  // Check if this is a BI landing page.
+  else {
+    $item = menu_get_item();
+    $hide = $item['path'] == 'business-insights';
+  }
+
+  // Check if this is a BI existing node.
+  $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $entity);
+  if ($hide || $wrapper->getBundle() != 'existing_node' || $wrapper->field_existing_node_fpp_ref->getBundle() != 'business_insight') {
+    return;
+  }
+  $entity->content['gsb_feature_news_display_top_bar'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'top-bar',
+      ),
+    ),
+    'link' => array(
+      '#type' => 'link',
+      '#title' => t('Business Insights'),
+      '#href' => "business-insights",
+    ),
+  );
+}
