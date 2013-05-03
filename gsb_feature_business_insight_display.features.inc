@@ -20,4 +20,3 @@ function gsb_feature_business_insight_display_ctools_plugin_api() {
 function gsb_feature_business_insight_display_views_api() {
   return array("api" => "3.0");
 }
-
