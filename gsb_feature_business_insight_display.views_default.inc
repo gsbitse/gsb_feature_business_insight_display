@@ -225,6 +225,8 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Homepage', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Latest Articles';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'homepage-latest-articles';
   $handler->display->display_options['display_description'] = 'Business insight articles on homepage.';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
