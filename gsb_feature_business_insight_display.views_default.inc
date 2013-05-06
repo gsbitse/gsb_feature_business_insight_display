@@ -329,6 +329,11 @@ function gsb_feature_business_insight_display_views_default_views() {
       ),
     ),
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date Published (field_date_published) */
+  $handler->display->display_options['sorts']['field_date_published_value']['id'] = 'field_date_published_value';
+  $handler->display->display_options['sorts']['field_date_published_value']['table'] = 'field_data_field_date_published';
+  $handler->display->display_options['sorts']['field_date_published_value']['field'] = 'field_date_published_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -345,6 +350,13 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'business_insight' => 'business_insight',
   );
+  /* Filter criterion: Content: Date Published (field_date_published) */
+  $handler->display->display_options['filters']['field_date_published_value']['id'] = 'field_date_published_value';
+  $handler->display->display_options['filters']['field_date_published_value']['table'] = 'field_data_field_date_published';
+  $handler->display->display_options['filters']['field_date_published_value']['field'] = 'field_date_published_value';
+  $handler->display->display_options['filters']['field_date_published_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_date_published_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_date_published_value']['year_range'] = '-0:+3';
   $export['business_insights_by_tag'] = $view;
 
   $view = new view();
