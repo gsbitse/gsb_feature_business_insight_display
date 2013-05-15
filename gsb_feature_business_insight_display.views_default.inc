@@ -388,7 +388,7 @@ function gsb_feature_business_insight_display_views_default_views() {
 <li class="bi_ct_video"><a href="/business-insights/Video">Video</a></li>
 <li class="bi_ct_event"><a href="/business-insights/Event">Event</a></li>
 </ul>';
-  $handler->display->display_options['header']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['header']['area']['format'] = 'gsb_wysiwyg_text';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
