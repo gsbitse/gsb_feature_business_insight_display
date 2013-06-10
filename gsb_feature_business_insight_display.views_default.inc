@@ -51,6 +51,8 @@ function gsb_feature_business_insight_display_views_default_views() {
 
   /* Display: Menu Links */
   $handler = $view->new_display('panel_pane', 'Menu Links', 'bi_topic_menu_links');
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['business_insight_topic_filter'] = $view;
 
   $view = new view();
