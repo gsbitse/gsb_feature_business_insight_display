@@ -448,6 +448,8 @@ function gsb_feature_business_insight_display_views_default_views() {
   /* Display: Business Insights Menu */
   $handler = $view->new_display('panel_pane', 'Business Insights Menu', 'business_insights_menu');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['business_insights_sidebar'] = $view;
 
   $view = new view();
