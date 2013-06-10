@@ -148,6 +148,8 @@ function gsb_feature_business_insight_display_views_default_views() {
     'school_story' => 'school_story',
     'gsb_video' => 'gsb_video',
   );
+  $handler->display->display_options['pane_category']['name'] = 'Content Panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_business_insight_topic_tid' => array(
       'type' => 'panel',
@@ -164,6 +166,8 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'view-list-teaser';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Events */
   $handler = $view->new_display('panel_pane', 'Events', 'business_insight_events');
@@ -186,6 +190,8 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Other */
   $handler = $view->new_display('panel_pane', 'Other', 'other');
@@ -208,6 +214,8 @@ function gsb_feature_business_insight_display_views_default_views() {
     'business_insight' => 'business_insight',
     'gsb_video' => 'gsb_video',
   );
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_business_insight_topic_tid' => array(
       'type' => 'panel',
@@ -261,6 +269,8 @@ function gsb_feature_business_insight_display_views_default_views() {
     'school_story' => 'school_story',
     'gsb_video' => 'gsb_video',
   );
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_region_tid' => array(
       'type' => 'panel',
@@ -316,7 +326,7 @@ function gsb_feature_business_insight_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Editorial Summary */
+  /* Field: Field: Editorial Summary */
   $handler->display->display_options['fields']['field_editorial_summary']['id'] = 'field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['table'] = 'field_data_field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['field'] = 'field_editorial_summary';
@@ -591,7 +601,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Editorial Summary */
+  /* Field: Field: Editorial Summary */
   $handler->display->display_options['fields']['field_editorial_summary']['id'] = 'field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['table'] = 'field_data_field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['field'] = 'field_editorial_summary';
@@ -939,7 +949,7 @@ function gsb_feature_business_insight_display_views_default_views() {
   $handler->display->display_options['sorts']['field_date_published_value']['table'] = 'field_data_field_date_published';
   $handler->display->display_options['sorts']['field_date_published_value']['field'] = 'field_date_published_value';
   $handler->display->display_options['sorts']['field_date_published_value']['order'] = 'DESC';
-  $handler->display->display_options['pane_category']['name'] = 'GSB Content Panes';
+  $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
