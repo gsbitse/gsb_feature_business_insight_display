@@ -4,6 +4,7 @@
  * Code for the GSB Feature Business Insight Display feature.
  */
 
+// Adding a comment
 include_once 'gsb_feature_business_insight_display.features.inc';
 
 function gsb_feature_business_insight_display_entity_info_alter(&$entity_info) {
